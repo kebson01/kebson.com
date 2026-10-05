@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Kebson St Charles">
+<link rel="canonical" href="https://kebson.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kebson.com/">
+<meta property="og:title" content="Kebson St Charles — Product Owner &amp; Software Engineer">
+<meta property="og:description" content="I turn messy processes into products people use. Product Owner and software engineer in South Florida.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23F2B705'/><text y='68' x='50' font-size='48' font-family='Arial' font-weight='800' fill='%23132033' text-anchor='middle'>KS</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kebson St Charles",
+  "jobTitle": "Product Owner & Software Engineer",
+  "email": "careers@kebson.com",
+  "url": "https://kebson.com/",
+  "sameAs": ["https://www.linkedin.com/in/kebson-st-charles-4b2a1b126/", "https://github.com/kebson01"],
+  "worksFor": { "@type": "Organization", "name": "City of Weston, FL" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Southern New Hampshire University" },
+    { "@type": "CollegeOrUniversity", "name": "Nova Southeastern University" }
+  ]
+}
+</script>
+<title>Kebson St Charles</title>
+<meta name="description" content="Kebson St Charles — Product Owner and software engineer in South Florida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one readable column; work shown as backlog story cards (As a / I want / So that) */
+:root{
+  --bg:#F2F4F7; --surface:#FFFFFF; --ink:#132033; --muted:#55627A; --line:#D9DEE7;
+  --accent:#F2B705; --accent-soft:#FFF2C2; --accent-ink:#5A4300; --link:#1F4FBF;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1621; --surface:#172131; --ink:#E8ECF3; --muted:#9AA7BC; --line:#2A374B;
+  --accent:#F2B705; --accent-soft:#3A3010; --accent-ink:#FFD866; --link:#8DB1FF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1621; --surface:#172131; --ink:#E8ECF3; --muted:#9AA7BC; --line:#2A374B;
+  --accent:#F2B705; --accent-soft:#3A3010; --accent-ink:#FFD866; --link:#8DB1FF; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);margin:0;padding-inline:20px}
+.wrap{max-width:1040px;margin:0 auto}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+.label{font:500 .74rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;flex-wrap:wrap}
+.mark{font:800 1.1rem var(--display);text-decoration:none;color:var(--ink)}
+.mark span{background:var(--accent);color:#132033;padding:0 6px;border-radius:4px;margin-right:6px}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{color:var(--muted);text-decoration:none;font-size:.92rem}
+nav ul a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding-block:56px 40px;display:grid;gap:28px}
+.hero h1{font-size:clamp(2.3rem,5.2vw,4rem);font-weight:800;letter-spacing:-.02em;max-width:15ch}
+.hero h1 mark{background:linear-gradient(transparent 58%,var(--accent) 58%);color:inherit;padding:0 .05em}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:56ch;margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:center}
+.hero-copy{display:grid;gap:24px;min-width:0}
+.swap{display:inline-block;color:var(--link);transition:opacity .25s,transform .25s}
+.swap.out{opacity:0;transform:translateY(-.25em)}
+
+/* sprint board */
+.board{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:12px;box-shadow:0 18px 40px -24px rgba(19,32,51,.45);transform:rotate(1deg)}
+.board-top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.pts{font:500 .72rem var(--mono);background:var(--bg);border:1px solid var(--line);padding:3px 8px;border-radius:999px;font-variant-numeric:tabular-nums}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.colm{background:var(--bg);border-radius:8px;padding:8px;display:flex;flex-direction:column;gap:8px;min-height:190px;min-width:0}
+.ticket{font:500 .82rem/1.3 var(--body);text-align:left;color:#132033;background:var(--note,#FFE27A);border:0;border-radius:4px;padding:10px 8px;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.12);transform:rotate(var(--r,0deg));transition:transform .2s;overflow-wrap:anywhere}
+.ticket:hover{transform:rotate(0) scale(1.04)}
+.ticket.done{text-decoration:line-through;text-decoration-thickness:2px;opacity:.75}
+.ticket.star{--note:#9FE3C4;font-weight:700}
+.board-msg{margin:0;font-weight:600}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50;width:100%;height:100%}
+
+.proof{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-block:8px 0}
+.proof div{padding:22px 16px 22px 0;display:grid;gap:6px;min-width:0}
+.proof div+div{padding-left:16px;border-left:1px solid var(--line)}
+.proof b{font:700 clamp(1.4rem,3vw,2rem)/1.1 var(--display);font-variant-numeric:tabular-nums}
+.proof span{font-size:.88rem;color:var(--muted)}
+
+section{padding-block:72px 0}
+.head{display:grid;gap:10px;margin-bottom:32px;max-width:60ch}
+.head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.01em}
+.head p{margin:0;color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+.about-lead{display:grid;gap:16px;min-width:0}
+.about-lead h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+.photo{margin:0 0 8px;width:180px;max-width:60%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:4px solid var(--accent);box-shadow:0 14px 30px -18px rgba(0,0,0,.5);background:var(--surface)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.1);max-width:none}
+.roots{display:flex;flex-wrap:wrap;gap:8px}
+.roots span{font:500 .78rem var(--mono);padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.about-body{display:grid;gap:14px;font-size:1.08rem;max-width:62ch;min-width:0}
+.about-body p{margin:0}
+.about-body p:first-child::first-letter{font:800 3.2em/0.9 var(--display);float:left;margin:.06em .1em 0 0;color:var(--link)}
+.route{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.route::before{content:"";position:absolute;left:8px;right:8px;top:8px;border-top:2px dashed var(--line)}
+.route li{position:relative;padding-top:28px;display:grid;gap:2px;min-width:0;padding-right:12px}
+.route li::before{content:"";position:absolute;top:0;left:0;width:18px;height:18px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.route li:last-child::before{background:var(--link)}
+.route b{font-family:var(--display);font-size:1.1rem}
+.route span{color:var(--muted);font-size:.9rem}
+.offclock-head{margin-top:64px}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.note{background:var(--note);color:#132033;padding:22px 20px 26px;border-radius:4px;transform:rotate(var(--r));box-shadow:0 10px 22px -14px rgba(0,0,0,.5);display:grid;gap:8px;align-content:start;min-width:0;transition:transform .25s}
+.note:hover{transform:rotate(0) translateY(-4px)}
+.note h3{font-size:1.2rem}
+.note p{margin:0;font-size:.95rem}
+
+/* how I work */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{padding-top:18px;border-top:3px solid var(--ink);display:grid;gap:8px;align-content:start;min-width:0}
+.step h3{font-size:1.25rem}
+.step p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* story cards */
+.stories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px;display:grid;gap:16px;align-content:start;min-width:0}
+.card{transition:transform .25s}
+.stories .card:nth-child(even){transform:rotate(-.6deg)}
+.stories .card:nth-child(odd):not(.feature){transform:rotate(.5deg)}
+.stories .card:hover{transform:rotate(0) translateY(-4px)}
+.card.feature{position:relative;grid-column:1/-1;grid-template-columns:1.1fr 1fr;gap:28px;border-color:var(--ink)}
+.card-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.card h3{font-size:1.5rem}
+.card.feature h3{font-size:2rem}
+.tag{font:500 .72rem var(--mono);padding:4px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);white-space:nowrap}
+.story{margin:0;padding:14px 16px;border-left:3px solid var(--accent);background:var(--bg);border-radius:0 6px 6px 0;font-size:.95rem;display:grid;gap:4px}
+.story b{font:500 .7rem var(--mono);letter-spacing:.08em;color:var(--muted);margin-right:6px}
+.owned{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:.95rem}
+.owned li{display:grid;grid-template-columns:18px 1fr;gap:6px}
+.owned li::before{content:"✓";color:var(--accent-ink);font-weight:700}
+.stack{font:400 .78rem var(--mono);color:var(--muted)}
+.feature .col{display:grid;gap:16px;align-content:start;min-width:0}
+
+/* experience */
+.xp{display:grid;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:150px 1fr;gap:24px;padding-block:20px;border-bottom:1px solid var(--line)}
+.row .when{font:400 .85rem var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.row h3{font-size:1.15rem;font-family:var(--body);font-weight:600}
+.row .org{color:var(--muted);font-size:.95rem}
+.row p{margin:6px 0 0;max-width:65ch}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.skills > div{display:grid;gap:12px;align-content:start;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1px solid var(--line);background:var(--surface);padding:5px 10px;border-radius:6px;font-size:.88rem}
+.skills .lead .chips span{border-color:var(--accent);background:var(--accent-soft);color:var(--ink)}
+
+.edu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.edu div{display:grid;gap:4px;min-width:0}
+.edu b{font-family:var(--display);font-size:1.1rem}
+.edu span{color:var(--muted);font-size:.92rem}
+
+/* contact */
+.contact{margin-block:80px 40px;background:var(--ink);color:var(--bg);border-radius:14px;padding:40px clamp(20px,5vw,48px);display:grid;gap:20px}
+.contact h2{font-size:clamp(1.8rem,4.4vw,2.8rem);max-width:20ch}
+.contact p{margin:0;max-width:52ch;opacity:.8}
+.links{display:flex;gap:12px 28px;flex-wrap:wrap;align-items:center}
+.links a{color:var(--bg);font-weight:600}
+.email{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.email code{font:500 1rem var(--mono);background:rgba(127,127,127,.18);padding:8px 12px;border-radius:6px;user-select:all}
+.email button{font:600 .9rem var(--body);background:var(--accent);color:#132033;border:0;border-radius:6px;padding:9px 14px;cursor:pointer}
+footer{padding-block:0 40px;color:var(--muted);font-size:.85rem}
+
+@media (max-width:860px){
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .card.feature{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:20px}
+  .route{grid-template-columns:1fr 1fr;row-gap:24px}
+  .route::before{display:none}
+  .notes{grid-template-columns:1fr}
+  .stories{grid-template-columns:1fr}
+  .board{transform:none}
+  .skills,.edu{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  body{padding-inline:16px}
+  .proof{grid-template-columns:1fr 1fr}
+  .proof div:nth-child(3){padding-left:0;border-left:0}
+  .proof div:nth-child(n+3){border-top:1px solid var(--line)}
+  .stories,.steps,.skills,.edu{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr;gap:4px}
+  nav ul{gap:14px}
+}
+.stamp{position:absolute;top:18px;right:22px;font:800 .95rem var(--display);letter-spacing:.12em;color:#1E9E63;border:3px solid #1E9E63;padding:4px 10px;border-radius:6px;transform:rotate(8deg);opacity:.85}
+@media (prefers-reduced-motion:reduce){.btn:hover,.card,.stories .card:hover,.ticket,.ticket:hover,.note,.note:hover,.photo{transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav>
+  <a class="mark" href="#top"><span>KS</span>Kebson St Charles</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-grid">
+  <div class="hero-copy">
+  <span class="label">Product Owner · Software Engineer · South Florida</span>
+  <h1>I turn <span class="swap" id="swap" aria-label="messy processes">messy processes</span> into <mark>products people use.</mark></h1>
+  <p>I'm a product owner who also writes the code. I start with the people stuck in a broken process, decide what's worth building, then build it and ship it. My path runs from the Bahamas to the U.S. Army to city government to products of my own.</p>
+  <div class="cta">
+    <a class="btn primary" href="#work">See what I've built</a>
+    <a class="btn" href="#contact">Get in touch</a>
+  </div>
+  </div>
+  <aside class="board" aria-label="Interactive sprint board">
+    <div class="board-top"><span class="label">Sprint 1 · click a card to move it</span><span class="pts" id="pct">40% done</span></div>
+    <div class="cols">
+      <div class="colm" data-col="0"><span class="label">To do</span></div>
+      <div class="colm" data-col="1"><span class="label">Doing</span></div>
+      <div class="colm" data-col="2"><span class="label">Done</span></div>
+    </div>
+    <p class="board-msg" id="msg" hidden>Sprint complete. <a href="#contact">Let's plan the next one →</a></p>
+  </aside>
+  </div>
+  <div class="proof">
+    <div><b>1 wk → 5 min</b><span>lien search turnaround after I automated it in Accela</span></div>
+    <div><b>75%+</b><span>less manual reporting effort for city leadership</span></div>
+    <div><b>22</b><span>Broward County cities live in Open Permit</span></div>
+    <div><b>6</b><span>city departments I've delivered projects for</span></div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="about">
+    <div class="about-lead">
+      <figure class="photo"><img src="images/profile.png" alt="Kebson St Charles" width="300" height="300" decoding="async" onerror="this.closest('figure').hidden=true"></figure>
+      <span class="label">About me</span>
+      <h2>I'm an island boy.</h2>
+      <div class="roots"><span>Grew up in the Bahamas</span><span>Haitian parents</span><span>Haitian Bahamian</span></div>
+    </div>
+    <div class="about-body">
+      <p>I grew up in the Bahamas in a Haitian household, and I've been at home around people ever since. Ask me anything about where you're from. I'll ask you about the food.</p>
+      <p>I joined the U.S. Army right after high school, then worked for the Department of Homeland Security at TSA. The plan was to become a federal law enforcement agent. When that path closed, I went back to my first love, computers.</p>
+      <p>I took my first one apart in high school, and I've been trying to understand how things piece together ever since. That same curiosity is behind all the work on this page.</p>
+    </div>
+  </div>
+  <ol class="route" aria-label="My path">
+    <li><b>The Bahamas</b><span>Where I grew up</span></li>
+    <li><b>U.S. Army</b><span>Right after high school</span></li>
+    <li><b>TSA</b><span>Department of Homeland Security</span></li>
+    <li><b>Back to computers</b><span>My first love</span></li>
+  </ol>
+
+  <div class="head offclock-head">
+    <span class="label">Off the clock</span>
+    <h2>Away from the keyboard</h2>
+  </div>
+  <div class="notes">
+    <div class="note" style="--note:#FFE27A;--r:-1.5deg"><h3>Family first</h3><p>My wife and kids are where my time goes. Few things beat watching my kids run around and have fun.</p></div>
+    <div class="note" style="--note:#B9D7FF;--r:1deg"><h3>Dolphins football</h3><p>Big Dolphins fan and a sports fan in general. I also spent four years on the IT team at Hard Rock Stadium.</p></div>
+    <div class="note" style="--note:#FFC2D1;--r:-.5deg"><h3>Food, travel, good company</h3><p>I love to travel and try different food. A good time for me is a group of people getting together, whether that's over a few drinks or just relaxing.</p></div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="head">
+    <span class="label">How I work</span>
+    <h2>My definition of done</h2>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="label">Step 1</span><h3>Discover</h3><p>Five years inside city government taught me where users get stuck. I gather requirements from the people doing the work.</p></div>
+    <div class="step"><span class="label">Step 2</span><h3>Decide</h3><p>I set the scope, flag the risks and get sign-off from department heads up to the City Manager before we build.</p></div>
+    <div class="step"><span class="label">Step 3</span><h3>Build &amp; deliver</h3><p>I write vendor requirements, review configuration as a developer, write code myself and test every release before go-live.</p></div>
+    <div class="step"><span class="label">Step 4</span><h3>Train &amp; measure</h3><p>I train staff and residents on what we ship and track the results in dashboards leadership actually reads.</p></div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="head">
+    <span class="label">Selected work</span>
+    <h2>Things I've built and shipped</h2>
+    <p>Each one written the way it started: as a user story on a sticky note.</p>
+  </div>
+  <div class="stories">
+
+    <article class="card feature">
+      <div class="col">
+        <span class="stamp" aria-hidden="true">SHIPPED</span>
+        <div class="card-top"><span class="label">Product Owner &amp; engineer · 2025 – present</span><span class="tag">Live</span></div>
+        <h3>Open Permit</h3>
+        <p class="story"><span><b>AS A</b>homeowner replacing a water heater</span><span><b>I WANT</b>to know if I need a permit, what it costs and what to submit</span><span><b>SO THAT</b>I don't overpay a contractor or fail inspection</span></p>
+      </div>
+      <div class="col">
+        <span class="label">What I owned</span>
+        <ul class="owned">
+          <li>Delivered against a fixed 12-week plan, owning scope, schedule and risk through launch</li>
+          <li>Live with requirements for 22 Broward County cities, each with its own fees, surcharges, eligibility rules and application questions</li>
+          <li>Separate experiences for residents and contractors, city staff and admins, across about 37 screens</li>
+          <li>Built the AI features: document classification, automated Q&amp;A, a photo-based permit check and a model that turns a plain-English project description into the right permit type</li>
+          <li>Self-service permit map and fee calculator</li>
+        </ul>
+        <span class="stack">React · Supabase · Anthropic API · Azure OpenAI · scikit-learn · Stripe</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><span class="label">City of Weston · Accela</span><span class="tag">Automation</span></div>
+      <h3>Lien search in minutes</h3>
+      <p class="story"><span><b>AS A</b>buyer closing on a property</span><span><b>I WANT</b>the city's lien search back quickly</span><span><b>SO THAT</b>my closing isn't held up for a week</span></p>
+      <ul class="owned">
+        <li>Rebuilt a manual, multi-department search that took a week into an Accela workflow that runs in about 5 minutes</li>
+        <li>Also automated the local business tax process end to end</li>
+      </ul>
+      <span class="stack">Accela Civic Platform · Workflow configuration</span>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><span class="label">City of Weston · Finance</span><span class="tag">Go-live</span></div>
+      <h3>Tyler Munis AP rollout</h3>
+      <p class="story"><span><b>AS</b>the Finance department</span><span><b>I WANT</b>accounts payable moved to the new ERP</span><span><b>SO THAT</b>vendors keep getting paid while we switch systems</span></p>
+      <ul class="owned">
+        <li>The city's project manager from vendor kickoff through go-live</li>
+        <li>Ran vendor and stakeholder meetings, made the system changes for go-live and trained end users</li>
+      </ul>
+      <span class="stack">Tyler Munis ERP · Vendor coordination · UAT</span>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><span class="label">City of Weston · Leadership</span><span class="tag">Reporting</span></div>
+      <h3>Leadership dashboards</h3>
+      <p class="story"><span><b>AS</b>city leadership</span><span><b>I WANT</b>KPIs and budget performance at a glance</span><span><b>SO THAT</b>decisions don't wait on manual reports</span></p>
+      <ul class="owned">
+        <li>Power BI dashboards and SSRS reports on operations and budget</li>
+        <li>Automated recurring reports, cutting manual effort by over 75%</li>
+      </ul>
+      <span class="stack">Power BI · SSRS · SQL</span>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><span class="label">bridalteam.com</span><span class="tag">Live</span></div>
+      <h3>Bridal Team</h3>
+      <p class="story"><span><b>AS A</b>couple planning a wedding</span><span><b>I WANT</b>my timeline, budget and ideas in one place my whole party can see</span><span><b>SO THAT</b>we stop planning across scattered spreadsheets and screenshots</span></p>
+      <ul class="owned">
+        <li>Relaunched an existing product with an AI planner at its center: timelines, budgets, checklists and what to book first</li>
+        <li>Shared mood boards, RSVPs and a phone app that installs from the browser</li>
+      </ul>
+      <span class="stack">Next.js · AI planning assistant · Installable web app</span>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><span class="label">Freelance</span><span class="tag">CRM</span></div>
+      <h3>PrimeBroward CRM</h3>
+      <p class="story"><span><b>AS A</b>wholesale real estate operator</span><span><b>I WANT</b>a pipeline that follows how my deals actually move</span><span><b>SO THAT</b>no lead or deal slips through</span></p>
+      <ul class="owned">
+        <li>Lead pipeline and deal tracking modeled on the real wholesale process</li>
+      </ul>
+      <span class="stack">JavaScript</span>
+    </article>
+
+    <article class="card">
+      <div class="card-top"><span class="label">Nova Southeastern University</span><span class="tag">Education</span></div>
+      <h3>Clinical simulation AI</h3>
+      <p class="story"><span><b>AS A</b>nursing student</span><span><b>I WANT</b>to practice patient conversations before clinicals</span><span><b>SO THAT</b>my first real patient isn't my first try</span></p>
+      <ul class="owned">
+        <li>Added conversational AI to a clinical-simulation trainer for nursing students</li>
+        <li>Trained students and faculty on AR/VR headsets and apps</li>
+      </ul>
+      <span class="stack">Conversational AI · AR/VR</span>
+    </article>
+
+  </div>
+</section>
+
+<section id="experience">
+  <div class="head">
+    <span class="label">Experience</span>
+    <h2>Previous sprints</h2>
+  </div>
+  <div class="xp">
+    <div class="row"><span class="when">2024 – now</span><div><h3>Product Owner &amp; Delivery Lead</h3><span class="org">Independent consulting, alongside my city role</span><p>Took Open Permit from plan to launch on a fixed 12-week schedule. Owned scope, schedule and risk, and built the AI features.</p></div></div>
+    <div class="row"><span class="when">2021 – now</span><div><h3>Software Engineer II / Data &amp; Reporting Analyst</h3><span class="org">City of Weston, FL</span><p>Project manager for the Tyler Munis and Accela/ePermitHub work. I run projects for Building, Engineering, Fire, Finance, IT and Procurement, from requirements through City Manager sign-off to release.</p></div></div>
+    <div class="row"><span class="when">2018 – 2020</span><div><h3>Immersive Technology Analyst</h3><span class="org">Nova Southeastern University</span><p>Trained students and faculty on AR/VR, and added conversational AI to a nursing clinical-simulation trainer.</p></div></div>
+    <div class="row"><span class="when">2016 – 2020</span><div><h3>Team Lead, IT Support &amp; Training</h3><span class="org">Miami Dolphins · Hard Rock Stadium</span><p>Led the game-day IT support and training team. Trained staff on point-of-sale systems and kept operations running.</p></div></div>
+    <div class="row"><span class="when">2010 – 2014</span><div><h3>Transportation Security Officer</h3><span class="org">TSA</span><p>Followed strict federal procedure in a high-volume airport where mistakes weren't an option.</p></div></div>
+    <div class="row"><span class="when">2001 – 2010</span><div><h3>Armor Crewman &amp; HR Specialist</h3><span class="org">U.S. Army</span><p>Active duty and Reserve. Led and worked in high-pressure teams and managed personnel data with a security clearance.</p></div></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="head">
+    <span class="label">Skills</span>
+    <h2>What's in the toolbox</h2>
+    <p>I run the project, and I can write the code.</p>
+  </div>
+  <div class="skills">
+    <div class="lead"><span class="label">Product &amp; delivery</span><div class="chips"><span>Project planning</span><span>Scope management</span><span>Risk &amp; issue tracking</span><span>Requirements</span><span>Vendor coordination</span><span>User acceptance testing</span><span>Go-live readiness</span><span>End-user training</span><span>Executive communication</span></div></div>
+    <div><span class="label">Software engineering</span><div class="chips"><span>Python</span><span>SQL</span><span>JavaScript</span><span>React</span><span>Next.js</span><span>APIs</span><span>Supabase</span><span>Docker</span><span>GitHub</span></div></div>
+    <div><span class="label">AI &amp; data</span><div class="chips"><span>LLM features</span><span>Document classification</span><span>Machine learning</span><span>Power BI</span><span>SSRS</span></div></div>
+    <div><span class="label">Government platforms</span><div class="chips"><span>Accela Civic Platform</span><span>ePermitHub</span><span>Tyler Munis ERP</span><span>Jira</span><span>SharePoint</span></div></div>
+  </div>
+  <div class="edu">
+    <div><b>M.S. Data Analytics</b><span>Southern New Hampshire University</span></div>
+    <div><b>B.S. Computer Science</b><span>Nova Southeastern University</span></div>
+    <div><b>AI/ML Bootcamp &amp; certificates</b><span>California Institute of Technology</span></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <span class="label" style="color:inherit;opacity:.7">Get in touch</span>
+  <h2>Have a process everyone has learned to live with?</h2>
+  <p>I'm open to Product Owner, software engineering and government-software implementation roles. Tell me about the problem first. Or just want to talk Dolphins football? Email works for that too.</p>
+  <div class="email"><code id="em">careers@kebson.com</code><button id="copy" type="button">Copy email</button></div>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/kebson-st-charles-4b2a1b126/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/kebson01" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+
+<footer>© 2026 Kebson St Charles · Built in sprints. No stand-ups ran long.</footer>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click', async e => {
+  const b = e.currentTarget, t = document.getElementById('em');
+  try { await navigator.clipboard.writeText(t.textContent); b.textContent = 'Copied'; }
+  catch { const r = document.createRange(); r.selectNodeContents(t); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected, press Ctrl+C'; }
+  setTimeout(() => b.textContent = 'Copy email', 2000);
+  burst(b);
+});
+
+const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Rotating headline word
+const words = ['messy processes', 'endless phone queues', 'paper forms', 'spreadsheet chaos', 'workarounds'];
+const swap = document.getElementById('swap');
+let wi = 0;
+if (!calm) setInterval(() => {
+  swap.classList.add('out');
+  setTimeout(() => { wi = (wi + 1) % words.length; swap.textContent = words[wi]; swap.classList.remove('out'); }, 250);
+}, 2600);
+
+// Sprint board
+const tickets = [
+  { t: 'Talk to the users', c: 2, note: '#FFE27A' },
+  { t: 'Find where it breaks', c: 2, note: '#FFC2D1' },
+  { t: 'Ship the fix', c: 1, note: '#B9D7FF' },
+  { t: 'Measure the result', c: 0, note: '#FFE27A' },
+  { t: 'Hire Kebson ★', c: 0, star: true },
+];
+const cols = document.querySelectorAll('.colm');
+function render() {
+  cols.forEach(col => col.querySelectorAll('.ticket').forEach(n => n.remove()));
+  tickets.forEach((k, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'ticket' + (k.c === 2 ? ' done' : '') + (k.star ? ' star' : '');
+    b.textContent = k.t;
+    if (k.note) b.style.setProperty('--note', k.note);
+    b.style.setProperty('--r', ((i % 3) - 1) * 1.5 + 'deg');
+    b.setAttribute('aria-label', k.t + (k.c === 2 ? ', done' : ', move to next column'));
+    b.addEventListener('click', () => {
+      if (k.c === 2) return;
+      k.c++; render();
+      const all = tickets.every(x => x.c === 2);
+      document.getElementById('msg').hidden = !all;
+      if (all) burst(document.querySelector('.board'), 140);
+    });
+    cols[k.c].appendChild(b);
+  });
+  const done = tickets.filter(x => x.c === 2).length;
+  document.getElementById('pct').textContent = Math.round(done / tickets.length * 100) + '% done';
+}
+render();
+
+// Confetti
+function burst(from, n = 60) {
+  if (calm) return;
+  const cv = document.createElement('canvas'); cv.id = 'confetti';
+  document.body.appendChild(cv);
+  const ctx = cv.getContext('2d'), dpr = devicePixelRatio || 1;
+  cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.scale(dpr, dpr);
+  const r = from.getBoundingClientRect(), ox = r.left + r.width / 2, oy = r.top + r.height / 2;
+  const colors = ['#F2B705', '#1F4FBF', '#FFC2D1', '#9FE3C4', '#B9D7FF'];
+  const ps = Array.from({ length: n }, () => ({
+    x: ox, y: oy, vx: (Math.random() - .5) * 12, vy: -Math.random() * 11 - 3,
+    s: 5 + Math.random() * 6, a: Math.random() * 6, va: (Math.random() - .5) * .3,
+    c: colors[Math.floor(Math.random() * colors.length)]
+  }));
+  let f = 0;
+  (function tick() {
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    ps.forEach(p => {
+      p.vy += .35; p.x += p.vx; p.y += p.vy; p.a += p.va;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.fillStyle = p.c;
+      ctx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); ctx.restore();
+    });
+    if (++f < 110) requestAnimationFrame(tick); else cv.remove();
+  })();
+}
+</script>
+</body>
+</html>
