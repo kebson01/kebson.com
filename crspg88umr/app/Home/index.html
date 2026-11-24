@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/crspg88umr/app/icons/icon-96x96.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#f97316" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="GameDay" />
+    <link rel="apple-touch-icon" href="/crspg88umr/app/icons/apple-touch-icon-180x180.png" />
+    <link rel="manifest" href="/crspg88umr/app/manifest.json" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://maps.googleapis.com" />
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
+    
+    <!-- Fonts: Inter (body) + Barlow Condensed (headlines, scoreboards) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Apply light/dark theme before first paint (see src/lib/theme.js) -->
+    <script>
+      (function () {
+        try {
+          var pref = localStorage.getItem('gameday_theme');
+          var dark = pref === 'dark' || (pref !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
+
+    <title>GameDay</title>
+    <script type="module" crossorigin src="/crspg88umr/app/assets/index-A43kUAGq.js"></script>
+    <link rel="stylesheet" crossorigin href="/crspg88umr/app/assets/index-DJ7K3Nw7.css">
+  <script id="vite-plugin-pwa:register-sw" src="/crspg88umr/app/registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
